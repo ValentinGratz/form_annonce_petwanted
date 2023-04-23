@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vérification du formulaire</title>
+</head>
+<body>
+<h1>Récapitulatif des informations saisies</h1>
+<h2>Type d'animal, état, ville, secteur, date et heure</h2>
+<p>Type d'animal: <strong>[type d'animal saisi]</strong></p>
+<p>Etat de l'animal: <strong>[état de l'animal saisi]</strong></p>
+<p>Ville: <strong>[ville saisie]</strong></p>
+<p>Secteur: <strong>[secteur saisi]</strong></p>
+<p>Date: <strong>[date saisie]</strong></p>
+<p>Heure: <strong>[heure saisie]</strong></p>
+<h2>Informations sur l'animal</h2>
+<p>Nom de l'animal: <strong>[nom de l'animal saisi]</strong></p>
+<p>Caractéristiques: <strong>[caractéristiques saisies]</strong></p>
+<p>Photo: <strong>[photo de l'animal envoyée]</strong></p>
+<h2>Informations sur le propriétaire</h2>
+<p>Nom du propriétaire: <strong>[nom du propriétaire saisi]</strong></p>
+<p>Email: <strong>[email saisi]</strong></p>
+<p>Téléphone: <strong>[numéro de téléphone saisi]</strong></p>
+<p>Facebook: <strong>[lien Facebook saisi]</strong></p>
+<form action="enregistrer.php" method="post">
+    <input type="hidden" name="type_animal" value="[type d'animal saisi]">
+    <input type="hidden" name="etat_animal" value="[état de l'animal saisi]">
+    <input type="hidden" name="ville" value="[ville saisie]">
+    <input type="hidden" name="secteur" value="[secteur saisi]">
+    <input type="hidden" name="date" value="[date saisie]">
+    <input type="hidden" name="heure" value="[heure saisie]">
+    <input type="hidden" name="nom_animal" value="[nom de l'animal saisi]">
+    <input type="hidden" name="caracteristiques" value="[caractéristiques saisies]">
+    <input type="hidden" name="photo_animal" value="[photo de l'animal envoyée]">
+    <input type="hidden" name="nom_proprietaire" value="[nom du propriétaire saisi]">
+    <input type="hidden" name="email" value="[email saisi]">
+    <input type="hidden" name="telephone" value="[numéro de téléphone saisi]">
+    <input type="hidden" name="facebook" value="[lien Facebook saisi]">
+    <input type="submit" value="Enregistrer l'annonce">
+</form>
+</body>
+</html>

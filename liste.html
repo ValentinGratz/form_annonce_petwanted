@@ -1,0 +1,32 @@
+<?php
+
+// Connexion à la base de données
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "myDB";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+die("La connexion a échoué: " . $conn->connect_error);
+}
+
+// Récupérer toutes les annonces de la base de données
+$sql = "SELECT * FROM annonces";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+// Afficher les annonces dans un tableau HTML
+echo "<table><tr><th>ID</th><th>Type d'animal</th><th>Etat</th><th>Ville</th><th>Secteur</th><th>Date</th><th>Heure</th><th>Nom de l'animal</th><th>Caractéristiques</th><th>Photo</th><th>Nom du propriétaire</th><th>Email</th><th>Téléphone</th><th>Facebook</th></tr>";
+    while($row = $result->fetch_assoc()) {
+    echo "<tr><td>".$row["id"]."</td><td>".$row["type_animal"]."</td><td>".$row["etat_animal"]."</td><td>".$row["ville"]."</td><td>".$row["secteur"]."</td><td>".$row["date"]."</td><td>".$row["heure"]."</td><td>".$row["nom_animal"]."</td><td>".$row["caracteristiques"]."</td><td><img src='".$row["photo_animal"]."' width='100'></td><td>".$row["nom_proprietaire"]."</td><td>".$row["email"]."</td><td>".$row["telephone"]."</td><td>".$row["facebook"]."</td></tr>";
+    }
+    echo "</table>";
+} else {
+echo "Aucune annonce trouvée.";
+}
+
+// Fermer la connexion à la base de données
+$conn->close();
+
+?>
